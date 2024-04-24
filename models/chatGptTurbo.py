@@ -5,6 +5,7 @@ from models import baseModel
 class ChatGptTurbo(baseModel.model):
     name = "ChatGPT-3.5 Turbo"
     caption = "_To use this app, you will need to have an OpenAI API Key. Access it from this link: https://platform.openai.com/account/api-keys_"
+    requiresApiKey = True
 
     def getProjectRequest(self, projectName, projectDescription, extraInformation):
         projectInformation = f"Project Name: {projectName}, Project Description: {projectDescription}, Extra Information: {extraInformation}"

@@ -6,6 +6,7 @@ from models import baseModel
 class MarellaGpt(baseModel.model):
     name = "marella/gpt-2-ggml"
     caption = "_Disclaimer: This model does not give very good results for this use case. It has been left here for testing and comparison purposes._"
+    requiresApiKey = False
 
     def getProjectRequest(self, projectName, projectDescription, extraInformation):
         basePrompt = prompts.BasePrompt()

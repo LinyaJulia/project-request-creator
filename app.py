@@ -3,10 +3,12 @@ from helpers import texts, exporter
 from models import modelManager
 
 def main():
-    st.session_state.modelController = modelManager.Models()
     if "projectRequest" not in st.session_state:
         st.session_state.projectRequest = ""
+    if "modelController" not in st.session_state:
+        st.session_state.modelController = ""
 
+    st.session_state.modelController = modelManager.Models()
     st.title("Project Brief Creator")
     st.markdown(texts.SubtitleNotes().getText())
 

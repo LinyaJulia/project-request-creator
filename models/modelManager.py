@@ -3,6 +3,11 @@ import streamlit as st
 
 class Models():
 
+    if "currentModel" not in st.session_state:
+        st.session_state.currentModel = ""
+    if "models" not in st.session_state:
+        st.session_state.models = ""
+
     st.session_state.currentModel = ""
 
     st.session_state.models = {

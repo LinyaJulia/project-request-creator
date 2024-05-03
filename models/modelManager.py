@@ -3,17 +3,7 @@ import streamlit as st
 
 class Models():
 
-    st.session_state.currentModel = ""
-    st.session_state.models = ""
-
-    def __init__(self):
-        if "currentModel" not in st.session_state:
-            st.session_state.currentModel = ""
-        if "models" not in st.session_state:
-            st.session_state.models = ""
-
-    st.session_state.currentModel = ""
-
+    st.session_state.currentModel = marellaGpt.MarellaGpt()
     st.session_state.models = {
         "ChatGPT-3.5 Turbo" : chatGptTurbo.ChatGptTurbo(),
         "marella/gpt-2-ggml" : marellaGpt.MarellaGpt()

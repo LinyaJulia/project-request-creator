@@ -1,12 +1,20 @@
 import streamlit as st
 from helpers import texts, exporter
-from models import modelManager
+from models import modelManager, chatGptTurbo, marellaGpt
 
 def main():
+
     if "projectRequest" not in st.session_state:
         st.session_state.projectRequest = ""
     if "modelController" not in st.session_state:
         st.session_state.modelController = ""
+    if "currentModel" not in st.session_state:
+            st.session_state.currentModel = chatGptTurbo.ChatGptTurbo()
+    if "models" not in st.session_state:
+            st.session_state.models = {
+                "ChatGPT-3.5 Turbo" : chatGptTurbo.ChatGptTurbo(),
+                "marella/gpt-2-ggml" : marellaGpt.MarellaGpt()
+            }
 
     st.session_state.modelController = modelManager.Models()
     st.title("Project Brief Creator")
